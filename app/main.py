@@ -1,4 +1,4 @@
-import boto3
+import localstack_client.session as boto3
 import json
 import psycopg2
 from datetime import datetime
@@ -8,10 +8,6 @@ import hashlib
 
 from user import User
 
-
-endpoint_url = "http://localhost.localstack.cloud:4566"
-# alternatively, to use HTTPS endpoint on port 443:
-# endpoint_url = "https://localhost.localstack.cloud"
 QUEUE_NAME = "login-queue"
 
 connection_string = "host=localhost port=5432 user=postgres password=postgres"
@@ -20,7 +16,7 @@ def main():
     connection = psycopg2.connect(connection_string)
     cursor = connection.cursor()
 
-    sqs = boto3.resource("sqs", endpoint_url=endpoint_url, region_name='us-east-1')
+    sqs = boto3.resource("sqs")
     queue = sqs.get_queue_by_name(QueueName=QUEUE_NAME)
     print('queue url:', queue.url)
 
