@@ -43,4 +43,8 @@ a message is received
 $ psql -d postgres -U postgres  -p 5432 -h localhost -W
 a table is present, named user_logins
 
-:
+---
+develop in PyCharm
+
+## step 1
+- write a program to, while True, check sqs for things and print them
