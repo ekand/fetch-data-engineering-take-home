@@ -3,7 +3,7 @@
 ## Steps to run
 
 - Follow the instructions in REAMDE-old.md for "Project Setup"
-- asdf
+- run `pip install -r requirements.txt`
 - run `python app/main.py`
 
 ## Commentary
@@ -14,7 +14,7 @@ I would deploy it the only way I know how, which is to spin up an EC2 instance, 
 
 ### What other components would I want to add to make this production ready?
 
-I would like to add logging to replace the print statements, 
+I would like to add logging to replace the print statements, and refactor the code into functions.
 
 ### How can this application scale with a growing data set?
 
